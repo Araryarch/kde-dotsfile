@@ -161,7 +161,13 @@ install_configs() {
   install_dir "rofi"
   install_dir "fastfetch"
   install_dir "gtk-3.0"
+  install_dir "gtk-3.0"
   install_dir "gtk-4.0"
+  install_dir "gtk-2.0"
+  install_dir "Kvantum"
+  install_dir "qt5ct"
+  install_dir "qt6ct"
+  install_dir "fontconfig"
   
   # SYSTEM
   install_dir "autostart"
