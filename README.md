@@ -29,6 +29,8 @@ bash <(curl -s https://raw.githubusercontent.com/Araryarch/kde-dotsfile/main/set
 2. Run installation:
    ```bash
    cd ~/dotsfiles
-   chmod +x install.sh
-   ./install.sh
+   chmod +x manager.sh
+   ./manager.sh
    ```
+
+   _Use the TUI menu to Install or Sync configs._
