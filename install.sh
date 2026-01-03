@@ -205,6 +205,12 @@ install_configs() {
     fi
   fi
 
+  if [ -f "$DOTS/wallpapers/logo.png" ]; then
+    mkdir -p "$HOME/Pictures"
+    cp "$DOTS/wallpapers/logo.png" "$HOME/Pictures/"
+    echo -e "   ${CYAN}→ Installed wallpaper asset: logo.png${NC}"
+  fi
+
   success "Configs installed!"
 }
 

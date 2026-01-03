@@ -106,6 +106,11 @@ if [ -f "$HOME/Pictures/hutao.png" ]; then
     echo "✅ copied: hutao.png"
 fi
 
+if [ -f "$HOME/Pictures/logo.png" ]; then
+    cp "$HOME/Pictures/logo.png" "$DEST/wallpapers/"
+    echo "✅ copied: logo.png"
+fi
+
 # ===== PACKAGES LIST =====
 # Generate a list of explicitly installed packages
 if command -v pacman &> /dev/null; then
