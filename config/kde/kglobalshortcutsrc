@@ -276,7 +276,7 @@ cycleNextAction=none,,Next History Item
 cyclePrevAction=none,,Previous History Item
 edit_clipboard=none,,Edit Contents…
 manage activities=none,Meta+Q,Show Activity Switcher
-next activity=Meta+A,none,Walk through activities
+next activity=none,none,Walk through activities
 previous activity=Meta+Shift+A,none,Walk through activities (Reverse)
 repeat_action=none,,Manually Invoke Action on Current Clipboard
 show dashboard=Ctrl+F12,Ctrl+F12,Show Desktop
@@ -289,5 +289,8 @@ toggle do not disturb=none,,Toggle do not disturb
 [services][kitty.desktop]
 _launch=Meta+Return
 
+[services][net.local.rofi.desktop]
+_launch=Meta+A
+
 [services][org.kde.krunner.desktop]
-_launch=Meta+Space
+_launch=none

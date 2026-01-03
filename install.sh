@@ -32,6 +32,7 @@ PACKAGES=(
   "kitty"
   "starship"
   "rofi"
+  "fastfetch"
   "ttf-font-awesome" # Common font for icons
 )
 
@@ -94,6 +95,11 @@ check_deps() {
   else
     error "Dependency installation failed. Check $LOG_FILE"
   fi
+
+  if [ -f "$DOTS/pkglist.txt" ]; then
+      info "Found pkglist.txt. You can install all original packages with:"
+      echo -e "${Cyan}   $PKG_MGR - < \"$DOTS/pkglist.txt\"${NC}"
+  fi
 }
 
 backup_configs() {
@@ -153,8 +159,29 @@ install_configs() {
 
   # LOOKS
   install_dir "rofi"
+  install_dir "fastfetch"
   install_dir "gtk-3.0"
   install_dir "gtk-4.0"
+
+  # WALLPAPERS
+  if [ -f "$DOTS/wallpapers/hutao.png" ]; then
+    mkdir -p "$HOME/Pictures"
+    cp "$DOTS/wallpapers/hutao.png" "$HOME/Pictures/"
+    echo -e "   ${CYAN}→ Installed wallpaper: hutao.png${NC}"
+
+    # Try setting wallpaper via qdbus if in a plasma session
+    if command -v qdbus &> /dev/null && pgrep plasmashell > /dev/null; then
+        echo -e "   ${BLUE}→ Configuring KDE wallpaper...${NC}"
+        qdbus org.kde.plasmashell /PlasmaShell org.kde.PlasmaShell.evaluateScript '
+            var allDesktops = desktops();
+            for (i=0;i<allDesktops.length;i++) {
+                d = allDesktops[i];
+                d.wallpaperPlugin = "org.kde.image";
+                d.currentConfigGroup = Array("Wallpaper", "org.kde.image", "General");
+                d.writeConfig("Image", "file://'"$HOME"'/Pictures/hutao.png");
+            }'
+    fi
+  fi
 
   success "Configs installed!"
 }

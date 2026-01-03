@@ -1,0 +1,138 @@
+/**
+ * Cat Chainsaw Theme (Remastered)
+ * Style: Center Window with Background Image & Glassmorphism
+ * Author: Ararya's Assistant
+ */
+
+* {
+    /* Catppuccin Mocha Palette */
+    bg-col:  #1e1e2e;
+    bg-col-light: #1e1e2e;
+    border-col: #1e1e2e;
+    selected-col: #1e1e2e;
+    blue: #89b4fa;
+    fg-col: #cdd6f4;
+    fg-col2: #f38ba8;
+    grey: #6c7086;
+    
+    /* Global transparency for "glass" effect elements */
+    transparent: rgba(0,0,0,0);
+    semi-transparent: rgba(30, 30, 46, 0.6);
+
+    width: 900;
+    font: "JetBrainsMono Nerd Font 14";
+}
+
+element-text, element-icon , mode-switcher {
+    background-color: inherit;
+    text-color:       inherit;
+}
+
+window {
+    height: 600px;
+    border: 2px;
+    border-color: @blue;
+    border-radius: 12px;
+    background-color: @bg-col;
+    /* Image Background - 'cover' logic is safest usually, or just path */
+    background-image: url("~/Pictures/hutao.png", height);
+}
+
+mainbox {
+    /* The overlay that makes text readable. 
+       Using a vertical gradient for a premium look */
+    background-color: rgba(30, 30, 46, 0.85);
+    children: [inputbar, listview];
+    padding: 20px;
+    border-radius: 12px;
+}
+
+inputbar {
+    children: [prompt, entry];
+    background-color: @transparent;
+    text-color: @fg-col;
+    border-radius: 6px;
+    padding: 10px;
+    margin: 0px 0px 20px 0px;
+    /* Add a subtle highlight for the input area */
+    border: 2px;
+    border-color: @blue;
+}
+
+prompt {
+    background-color: @blue;
+    padding: 6px 12px 6px 12px;
+    text-color: @bg-col;
+    border-radius: 6px;
+    margin: 0px 10px 0px 0px;
+}
+
+textbox-prompt-colon {
+    expand: false;
+    str: ":";
+}
+
+entry {
+    padding: 6px;
+    text-color: @fg-col;
+    background-color: @transparent;
+    placeholder: "Search...";
+    placeholder-color: @grey;
+}
+
+listview {
+    border: 0px;
+    padding: 0px;
+    margin: 0px;
+    columns: 2;
+    lines: 8;
+    background-color: @transparent;
+}
+
+element {
+    padding: 10px;
+    background-color: @transparent;
+    text-color: @fg-col;
+    border-radius: 6px;
+    spacing: 10px;
+    margin: 2px;
+}
+
+element-icon {
+    size: 32px;
+}
+
+element-text {
+    vertical-align: 0.5;
+}
+
+element selected {
+    background-color: @blue;
+    text-color: @bg-col; /* Dark text on Blue background for high contrast */
+}
+
+element selected-normal {
+    background-color: @blue;
+    text-color: @bg-col;
+}
+element selected-active {
+    background-color: @fg-col2; /* Pink for active */
+    text-color: @bg-col;
+}
+
+mode-switcher {
+    spacing: 0;
+}
+
+button {
+    padding: 10px;
+    background-color: @bg-col-light;
+    text-color: @grey;
+    vertical-align: 0.5; 
+    horizontal-align: 0.5;
+}
+
+button selected {
+  background-color: @bg-col;
+  text-color: @blue;
+}

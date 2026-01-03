@@ -1,0 +1,6 @@
+[Libinput][1267][13038][ELAN0412:01 04F3:32EE Touchpad]
+NaturalScroll=true
+
+[Mouse]
+cursorSize=28
+cursorTheme=Bibata-Modern-Ice
