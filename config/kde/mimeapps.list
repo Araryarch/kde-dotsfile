@@ -1,0 +1,21 @@
+[Added Associations]
+application/json=nvim.desktop;
+application/x-docbook+xml=nvim.desktop;
+application/x-yaml=nvim.desktop;
+text/markdown=nvim.desktop;
+text/plain=nvim.desktop;
+text/x-cmake=nvim.desktop;
+x-scheme-handler/http=firefox.desktop;
+x-scheme-handler/https=firefox.desktop;
+
+[Default Applications]
+application/json=nvim.desktop;
+application/x-docbook+xml=nvim.desktop;
+application/x-yaml=nvim.desktop;
+text/html=google-chrome.desktop
+text/markdown=nvim.desktop;
+text/plain=nvim.desktop;
+text/x-cmake=nvim.desktop;
+x-scheme-handler/bruno=bruno.desktop
+x-scheme-handler/http=firefox.desktop;
+x-scheme-handler/https=firefox.desktop;

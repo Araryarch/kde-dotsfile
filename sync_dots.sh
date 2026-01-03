@@ -56,6 +56,12 @@ sync_file "$SRC/krunnerrc" "$DEST/kde"
 sync_file "$SRC/khotkeysrc" "$DEST/kde"
 sync_file "$SRC/powermanagementprofilesrc" "$DEST/kde"
 sync_file "$SRC/kded5rc" "$DEST/kde"
+sync_file "$SRC/mimeapps.list" "$DEST/kde"
+sync_file "$SRC/ksmserverrc" "$DEST/kde"
+
+# ===== SYSTEM & AUTOSTART =====
+sync_dir "$SRC/autostart" "$DEST/autostart"
+sync_dir "$SRC/systemd" "$DEST/systemd"
 
 # ===== LOOKS CONFIG =====
 sync_dir "$SRC/rofi" "$DEST/rofi"
@@ -81,6 +87,10 @@ fi
 
 # KWin Scripts & Effects (often where tiling scripts live)
 sync_dir "$SRC_SHARE/kwin" "$DEST_SHARE/kwin"
+sync_dir "$SRC_SHARE/konsole" "$DEST_SHARE/konsole"
+sync_dir "$SRC_SHARE/applications" "$DEST_SHARE/applications"
+
+sync_file "$SRC_SHARE/user-places.xbel" "$DEST_SHARE"
 
 sync_dir "$SRC_SHARE/color-schemes" "$DEST_SHARE/color-schemes"
 sync_dir "$SRC_SHARE/aurorae" "$DEST_SHARE/aurorae"

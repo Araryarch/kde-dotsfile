@@ -162,6 +162,22 @@ install_configs() {
   install_dir "fastfetch"
   install_dir "gtk-3.0"
   install_dir "gtk-4.0"
+  
+  # SYSTEM
+  install_dir "autostart"
+  install_file "kde/mimeapps.list"
+
+  # DATA (Share)
+  # Konsole profiles are often in share/konsole, not just config
+  if [ -d "$DOTS/local/share/konsole" ]; then
+    mkdir -p "$HOME/.local/share"
+    cp -r "$DOTS/local/share/konsole" "$HOME/.local/share/"
+    echo -e "   ${CYAN}→ Installed data: konsole profiles${NC}"
+  fi
+  if [ -f "$DOTS/local/share/user-places.xbel" ]; then
+    cp "$DOTS/local/share/user-places.xbel" "$HOME/.local/share/"
+    echo -e "   ${CYAN}→ Installed file: user-places.xbel${NC}"
+  fi
 
   # WALLPAPERS
   if [ -f "$DOTS/wallpapers/hutao.png" ]; then
