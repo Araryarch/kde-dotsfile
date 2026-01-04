@@ -36,10 +36,10 @@ InactiveOuterOutlineThickness=2.25
 InactiveOutlineThickness=0.75
 InactiveSecondOutlineColor=255,0,0
 InactiveSecondOutlineThickness=3
-OuterOutlineColor=255,170,255
+OuterOutlineColor=255,183,184
 OuterOutlineThickness=2.5
 OutlineThickness=0.75
-SecondOutlineColor=255,0,255
+SecondOutlineColor=255,0,4
 SecondOutlineThickness=3
 Size=5
 
